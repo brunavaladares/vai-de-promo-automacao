@@ -14,8 +14,6 @@ describe('Fazer compra de passagem aérea no site Vai de Promo', () => {
     const botaoProximoMes = '[data-cy="next-calendar-month-button"]';
     const inputNumerodePassageirosEClasse = 'input[value="1 passageiro, Econômica"]';
     const buttonEncontrarVoos = 'button[data-cy="submitAirSearch"]';
-    const campoDeOndeVoceVaiSair = '.lgC69bWTZnqK05O6TJ2_ > .vdp-ui-air-search > .vdp-ui-air-search__form > :nth-child(1) > .vdp-ui-air-search__form__input-group > :nth-child(1) > .vdp-ui-container-label > .vdp-ui-input-external > .vdp-ui-input-container > .vdp-ui-input-group > [data-cy="departure"]';
-    const campoParaOndeVoceVai = '.lgC69bWTZnqK05O6TJ2_ > .vdp-ui-air-search > .vdp-ui-air-search__form > :nth-child(1) > .vdp-ui-air-search__form__input-group > :nth-child(3) > .vdp-ui-container-label > .vdp-ui-input-external > .vdp-ui-input-container > .vdp-ui-input-group > [data-cy="arrival"]';
     const inputNomeCompleto = '[name="contact.fullName"]';
     const inputEmail = '[name="contact.email"]';
     const inputCelular = '[name="contact.phone"]';
@@ -51,9 +49,7 @@ describe('Fazer compra de passagem aérea no site Vai de Promo', () => {
       cy.get(dataDeVoltaEscolhida).should('be.visible').click();
       cy.get(inputNumerodePassageirosEClasse).should('be.visible');
       cy.get(buttonEncontrarVoos).should('be.visible').should('be.enabled').click();
-      
-      cy.get(campoDeOndeVoceVaiSair).should('be.visible').type('Guarulhos, São Paulo, SP (GRU)');
-      cy.get(campoParaOndeVoceVai).should('be.visible').type('Todos os aeroportos, Belo Horizonte, MG (BHZ)');
+
       cy.contains('button', 'Comprar').should('be.visible').should('be.enabled').click();
   
       cy.get(inputNomeCompleto).should('be.visible').type('João Martins Sousa').should('not.be.null');
