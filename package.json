@@ -1,0 +1,22 @@
+{
+  "name": "automacao-vai-de-promo",
+  "version": "1.0.0",
+  "description": "Automação de fluxos básicos de testes do site Vai de Promo",
+  "main": "index.js",
+  "scripts": {
+    "cy:open": "cypress open",
+    "test": "cypress run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/brunavaladares"
+  },
+  "author": "Bruna Valadares",
+  "license": "ISC",
+  "dependencies": {
+    "cypress": "^13.1.0"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^8.0.2"
+  }
+}
