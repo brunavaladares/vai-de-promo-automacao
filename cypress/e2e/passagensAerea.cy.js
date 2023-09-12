@@ -68,6 +68,7 @@ describe('Fazer compra de passagem aérea no site Vai de Promo', () => {
       cy.get(nomeCompletoDaPessoaPagadora).should('be.visible').type('João Martins Sousa').should('not.be.null');
       cy.get(cpfDaPessoaPagadora).should('be.visible').type('56060671020').should('not.be.null');
       cy.get(buttonConfirmarPagamento).should('be.visible').should('be.enabled').click();
+      cy.wait(50000);
       cy.get(numeroPedido).should('be.visible');
   
     }) 
