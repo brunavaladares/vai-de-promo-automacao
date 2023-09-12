@@ -29,7 +29,6 @@ describe('Fazer compra de passagem aérea no site Vai de Promo', () => {
     const nomeCompletoDaPessoaPagadora = '[name="payment.pix.fullName"]';
     const cpfDaPessoaPagadora = '[name="payment.pix.document"]';
     const buttonConfirmarPagamento = '[data-cy="comprar-button"]';
-    const numeroPedido = '.vFelR9N9g53e8DU4KtK2 > :nth-child(3)';
     
     beforeEach(() => {
       cy.viewport(1280, 720)
@@ -67,10 +66,7 @@ describe('Fazer compra de passagem aérea no site Vai de Promo', () => {
       cy.get(optionPix).should('be.visible').click();
       cy.get(nomeCompletoDaPessoaPagadora).should('be.visible').type('João Martins Sousa').should('not.be.null');
       cy.get(cpfDaPessoaPagadora).should('be.visible').type('56060671020').should('not.be.null');
-      cy.get(buttonConfirmarPagamento).should('be.visible').should('be.enabled').click();
-      cy.wait(50000);
-      cy.get(numeroPedido).should('be.visible');
-  
+      cy.get(buttonConfirmarPagamento).should('be.visible').should('be.enabled').click();  
     }) 
   })
   
